@@ -36,7 +36,7 @@ var Todos = function () {
 
   this.show = function (req, resp, params) {
       var self = this;
-      geddy.model.adapter.Todo.load(params.id, function(todo){
+      geddy.model.adapter.Todo.load(params.id, function(err, todo){
           self.respond({todo: todo});
 
       });
