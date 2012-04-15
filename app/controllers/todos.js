@@ -14,9 +14,7 @@ var Todos = function () {
   };
 
   this.create = function (req, resp, params) {
-//    var todo = geddy.model.Todo.create({title: params.title
-//                                       , id: geddy.string.uuid(10)
-//                                       , status: 'open'});
+
       var self = this
           , todo = geddy.model.Todo.create({
               title: params.title
@@ -33,9 +31,6 @@ var Todos = function () {
           }
       });
 
-
-    // Save the resource, then display index page
-    this.redirect({controller: this.name});
 
   };
 
