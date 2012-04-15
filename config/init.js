@@ -1,3 +1,7 @@
+var mongo = require('mongodb-wrapper');
+
+geddy.db = mongo.db('localhost', 27017, 'todo');
+geddy.db.collection('todos');
 
 // Add uncaught-exception handler in prod-like environments
 if (geddy.config.environment != 'development') {
@@ -9,5 +13,5 @@ if (geddy.config.environment != 'development') {
 geddy.todos = [];
 
 geddy.model.adapter = {};
-geddy.model.adapter.Todo = require(process.cwd() + '/lib/model_adapters/todo').Todo;
+geddy.model.adapter.Todo = require(process.cwd() + '/lib/model_adapters/mongo-todo').Todo;
 
